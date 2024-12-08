@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="stylesheet" href="./cal.css">
+</head>
+<body>
+     <div class="calculator">
+        <input type="text" placeholder="0" id="box"  readonly>
+        <div>
+            <button class="operate" onclick="clears()">AC</button>
+            <button class="operate" onclick="delete1()">DEL</button>
+            <button class="operate" onclick="clearDisplays()">CLR</button>
+            <button class="operator"onclick="events1('/')">/</button>
+            
+        </div>
+        <div>
+            <button onclick="events1('7')">7</button>
+            <button onclick="events1('8')">8</button>
+            <button onclick="events1('9')">9</button>
+            <button class="operator" onclick="events1('*')">*</button>
+            </div>
+            <div>
+
+            <button onclick="events1('4')">4</button>
+            <button onclick="events1('5')">5</button>
+            <button onclick="events1('6')">6</button>
+            <button class="operator"onclick="events1('-')">-</button>
+        </div>
+        <div>
+        <div>
+            <button onclick="events1('1')">1</button>
+            <button onclick="events1('2')">2</button>
+            <button onclick="events1('3')">3</button>
+            <button class="operator"onclick="events1('+')">+</button>
+              
+        </div>
+        <div>
+              <button onclick="events1('00')">00</button>
+              <button onclick="events1('0')">0</button>
+              <button onclick="events1('.')">.</button>
+              <button class="operatee" onclick="operate()">=</button>
+         </div>
+    </div> 
+    <script>
+        document.getElementById("box").style.textAlign="right";
+        document.getElementById("box").style.padding="20px";
+        document.getElementById("box").style.textAlign="center";
+        document.getElementById("box").style.width="300px";
+
+        function events1(value){
+            document.getElementById("box").value+=value;
+            
+        }
+        
+        function clears(){
+            document.getElementById("box").value=' ';
+            
+        }
+
+        function clearDisplays() {
+       document.getElementById("box").value = "";
+}
+
+        function operate() {
+        
+    var y=eval(document.getElementById("box").value);
+    document.getElementById("box").value=y;
+} 
+function delete1(){
+    var n=document.getElementById("box").value;
+     document.getElementById("box").value=n.slice(0,-1);
+
+}
+    </script>
+</body>
+</html>
